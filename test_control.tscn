@@ -1,0 +1,174 @@
+[gd_scene load_steps=3 format=3 uid="uid://chifjptg185c1"]
+
+[ext_resource type="Texture2D" uid="uid://cqoqy8d16wsxw" path="res://player.png" id="1_fsxmt"]
+
+[sub_resource type="Theme" id="Theme_bb0em"]
+default_font_size = 8
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bb0em")
+metadata/psg_binding_value = {
+"position": ""
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="GoldPlus200" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold +200"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.add_200_gold"
+}
+
+[node name="GoldPlus2000" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold +2000"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.add_2000_gold"
+}
+
+[node name="GoldPlus20000" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold +200000"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.add_20000_gold"
+}
+
+[node name="NakedButton" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Naked?"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.CurrentEquipment.be_naked"
+}
+
+[node name="ChainButton" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Use Chain?"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.CurrentEquipment.use_chain"
+}
+
+[node name="PlateButton" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Use Plate?"
+metadata/psg_binding_value = {
+"pressed": "Globals.player.CurrentEquipment.use_plate"
+}
+
+[node name="NavigateToNextButton" type="Button" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next Scene"
+metadata/psg_binding_value = {
+"pressed": "Globals.next_scene"
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/VSplitContainer/HSplitContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoldLabel" type="Label" parent="HSplitContainer/VSplitContainer/HSplitContainer2/HSplitContainer"]
+layout_mode = 2
+text = "GOLD:"
+
+[node name="GoldValue" type="Label" parent="HSplitContainer/VSplitContainer/HSplitContainer2/HSplitContainer"]
+layout_mode = 2
+metadata/psg_binding_value = {
+"text": "Globals.player.CurrentGoldAmount"
+}
+
+[node name="PlayerName" type="LineEdit" parent="HSplitContainer/VSplitContainer/HSplitContainer2"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+placeholder_text = "Player Name"
+metadata/psg_binding_value = {
+"text": "Globals.player.PlayerName"
+}
+
+[node name="Player" type="TextureRect" parent="HSplitContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("1_fsxmt")
+stretch_mode = 5
+metadata/psg_binding_value = {
+"global_position": ""
+}
+
+[node name="Chest" type="TextureRect" parent="HSplitContainer/VSplitContainer/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+metadata/psg_binding_value = {
+"texture": "Globals.player.CurrentEquipment.Chest"
+}
+
+[node name="Head" type="TextureRect" parent="HSplitContainer/VSplitContainer/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+metadata/psg_binding_value = {
+"texture": "Globals.player.CurrentEquipment.Head"
+}
+
+[node name="Neck" type="TextureRect" parent="HSplitContainer/VSplitContainer/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+metadata/psg_binding_value = {
+"texture": "Globals.player.CurrentEquipment.Neck"
+}
+
+[node name="Arms" type="TextureRect" parent="HSplitContainer/VSplitContainer/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+metadata/psg_binding_value = {
+"texture": "Globals.player.CurrentEquipment.Arms"
+}
+
+[node name="Legs" type="TextureRect" parent="HSplitContainer/VSplitContainer/Player"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+metadata/psg_binding_value = {
+"texture": "Globals.player.CurrentEquipment.Legs"
+}
